@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>حكايتنا ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:'Segoe UI', Tahoma;
+      background:linear-gradient(135deg,#ff5f8a,#ff8fa3);
+      min-height:100vh;
+      overflow-x:hidden;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* ===== Login ===== */
+    .login{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+    }
+    .login-box{
+      background:rgba(255,255,255,0.2);
+      padding:35px;
+      border-radius:25px;
+      max-width:360px;
+      width:100%;
+      backdrop-filter:blur(8px);
+    }
+    .login-box h2{margin-bottom:10px;}
+    .login-box p{font-size:14px; opacity:.9;}
+    .login-box input{
+      width:100%; padding:14px; border-radius:14px;
+      border:none; margin-top:18px; text-align:center; font-size:16px;
+    }
+    .login-box button{
+      margin-top:18px; width:100%; padding:14px;
+      border:none; border-radius:14px; background:white;
+      color:#ff4d6d; font-size:16px; cursor:pointer; font-weight:bold;
+    }
+    .error{margin-top:10px; display:none; font-size:14px;}
+
+    /* ===== Content ===== */
+    .content{
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      padding:25px;
+      background:linear-gradient(135deg,#fff0f5,#ffe3ea);
+      width:100%;
+      min-height:100vh;
+    }
+    h1{text-align:center;color:#ff4d6d;margin-bottom:5px;font-size:36px;}
+    .subtitle{text-align:center;color:#ff4d6d;margin-bottom:30px;font-size:18px;font-style:italic;}
+    .counter{text-align:center;background:linear-gradient(135deg,#ff4d6d,#ff758f);
+      color:white;padding:30px 20px;border-radius:25px;margin-bottom:40px;
+      box-shadow:0 15px 30px rgba(0,0,0,.15);}
+    .counter p{font-size:18px;font-weight:bold;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;width:100%;max-width:900px;margin-bottom:40px;}
+    .card{background:white;border-radius:22px;padding:25px;text-align:center;box-shadow:0 12px 25px rgba(0,0,0,.12);transition:.3s;}
+    .card:hover{transform:translateY(-8px);}
+    .card h3{color:#ff4d6d;margin-bottom:12px;}
+    .card p{color:#555;font-size:15px;line-height:1.7;text-align:right;}
+   .card img,
+.card video {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* عرض */
+  height: auto;
+  object-fit: cover;     /* يملأ الإطار بشكل شيك */
+  border-radius: 15px;
+  margin-top: 12px;
+  background: #ddd;
+  display: block;
+}
+
+    footer{text-align:center; padding:15px; margin-top:30px; color:black; font-size:14px;}
+    button#showMore{margin-bottom:20px; padding:12px 25px; border:none; border-radius:12px; background:white; color:#ff4d6d; font-weight:bold; cursor:pointer;}
+  </style>
+</head>
+
+<body>
+
+<!-- ===== Login ===== -->
+<div class="login" id="login">
+  <div class="login-box">
+    <h2>💖 MIDO & BASMALA</h2>
+    <p>مع بعض لاخر العمر💌</p>
+    <input type="password" id="password" placeholder="اكتب الباسورد">
+    <button onclick="checkPassword()">ادخل عالمنا</button>
+    <div class="error" id="error">الباسورد غلط 💔</div>
+  </div>
+</div>
+
+<!-- ===== Content ===== -->
+<div class="content" id="content">
+
+  <!-- ===== Audio ===== -->
+  <audio id="basmalah">
+    <source src="" type="audio/mpeg">
+  </audio>
+
+  <audio id="music" loop>
+    <source src="C:\Users\DELL\Documents\HAYATY\Albumaty.Com_bhaa_sltan_maaya.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>حكايتنا ❤️</h1>
+  <div class="subtitle">من اليوم ده وإحنا بنعد العمر مش الأيام</div>
+
+  <div class="counter">
+    <p id="time">0 Days</p>
+  </div>
+
+  <!-- أول كارد -->
+  <div class="cards" id="firstCardContainer">
+    <div class="card">
+      <h3>💖 ينور عيني</h3>
+      <p>
+        يا أجمل حاجة حصلتلي في الدنيا دي من أول يوم شوفتك فيه،  
+        وأنا حبيتك حبيتك من كل قلبي.  
+        كل عيد حب واحنا دايمًا سوا...  
+        كل لحظة بقضيها معاكي بتبقى ذكرى محفورة في قلبي ومش هنساها أبداً.  
+        عارف إن الكلام مهما كان مش هيقدر يوصف حبي ليكي، بحبك ❤️
+        <br><br>
+        تعالي نكمل مع بعض ونعيش ✨
+      </p>
+    </div>
+  </div>
+
+  <!-- باقي الكاردز -->
+  <button id="showMore">عرض باقي الذكريات 💌</button>
+  <div class="cards" id="otherCards" style="display:none;">
+    <div class="card">
+      <h3>✨ أول اعتراف بالحب</h3>
+      <p>اللحظة اللي قلبي اتفتحلك فيها بدون أي خوف.</p>
+      <img src="C:\Users\DELL\Documents\HAYATY\2.jpeg" alt="مكان الصورة">
+    </div>
+    <div class="card">
+      <h3>💌 هنا عرفت إني بخاف عليكي</h3>
+      <p>حسيت بأمان غريب لما كنت جنبك.</p>
+      <img src="C:\Users\DELL\Documents\HAYATY\10.jpeg" alt="مكان الصورة">
+    </div>
+    <div class="card">
+      <h3>📸 أول صورة أرسلناها لبعض</h3>
+      <p>اللحظة اللي شفت فيها اجمل حاجه  .</p>
+      <img src="C:\Users\DELL\Documents\HAYATY\8.jpeg" alt="مكان الصورة">
+    </div>
+    <div class="card">
+      <h3>💌 أجمل رسالة بعتها</h3>
+      <p>كلمات صغيرة… لكنها حملت كل مشاعري.</p>
+          <img src="C:\Users\DELL\Documents\HAYATY\1.jpeg" alt="مكان الصورة">
+
+    </div>
+    <div class="card">
+      <h3>💝 أول حاجة خدتيها مني</h3>
+      <p>اللحظة اللي حسيّت فيها قد إيه قلبي ملك إيديك.</p>
+      <img src="3.jpeg" alt="مكان الصورة">
+    </div>
+
+    <div class="card">
+      <h3>❤️ إحنا</h3>
+      <p>مش قصة حب، ده أمان واختيار.</p>
+          <img src="4.jpeg" alt="مكان الصورة">
+
+    </div>
+  </div>
+
+  <footer>انتي أجمل حاجة حصلتلي في حياتي ❤️</footer>
+</div>
+
+<script>
+  const correctPassword = "12/1/2026";
+
+  function checkPassword(){
+    const pass = document.getElementById("password").value;
+    if(pass === correctPassword){
+      document.getElementById("login").style.display="none";
+      document.getElementById("content").style.display="flex";
+      // تشغيل البسملة
+      document.getElementById("basmalah").play();
+      setTimeout(()=>{
+        document.getElementById("music").play();
+      },2000);
+    } else{
+      document.getElementById("error").style.display="block";
+    }
+  }
+
+  document.getElementById("showMore").addEventListener("click", ()=>{
+    document.getElementById("otherCards").style.display="grid";
+    document.getElementById("showMore").style.display="none";
+  });
+
+  const startDate = new Date("January 12, 2026 00:00:00").getTime();
+  setInterval(()=>{
+    const now = new Date().getTime();
+    const diff = now - startDate;
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById("time").innerHTML = `${days} Days ❤️ ${hours} Hours ⏰ ${minutes} Minutes ⌛ ${seconds} Seconds`;
+  },1000);
+</script>
+
+</body>
+</html>
